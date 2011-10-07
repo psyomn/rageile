@@ -1,8 +1,28 @@
-load 'Task.rb' 
+#author::Simon Symeonidis 
+#Main interface for whatever. 
 
-t = Task.new 
-t1 = Task.new 
-t2 = Task.new 
-t3 = Task.new 
+load 'CLIManageTasks.rb'
 
-puts t3.to_s
+taskManager = CLIManageTasks.new 
+action = String.new 
+
+# Main loop 
+
+while action !~ /END/i 
+  print "> "
+  action = $stdin.gets
+  action.chomp! 
+
+  case action
+    when "help"
+      puts "help - show help info" 
+    when /task/ 
+      taskManager.execute action 
+    when /end/i 
+      puts "Bye." 
+    else 
+      puts "No such command. Type help"
+  end
+end 
+
+

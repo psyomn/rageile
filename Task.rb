@@ -9,28 +9,42 @@ class Task
   attr_accessor :EstimatedTime
   attr_accessor :ActualTime 
   attr_accessor :DateCreated
+
+  attr_reader :Stopped
+  attr_reader :Started
   attr_reader :ID
 
 public
   # Initialize all 
   def initialize
-    @Owner = nil 
-	@ASkedBy = nil 
-	@EstimatedTime = nil 
-	@ActualTime = nil 
+    @Owner = User.new
+	@AskedBy = User.new
+	@EstimatedTime = 0
+	@ActualTime = Time.new
     @Created = Time.new
+    @Started = Time.new 
+    @Stopped = Time.new 
 	@ID = @@count 
     @@count += 1
   end
 
   def start
+    @Started = Time.new
   end
 
   def stop 
+    @Stopped = Time.new 
+    @ActualTime = @Stopped - @Started 
   end
 
+  # To string method 
   def to_s
-    "Task Id: " + @ID.to_s
+    "Task Id: " + @ID.to_s \
+    + "\nEstimated time: " + @EstimatedTime.to_s \
+    + "\nActual time: " + @ActualTime.to_s \
+    + "\nOwner: " + @Owner.to_s \
+    + "\nAsked by: " + @AskedBy.to_s \
+    + "\nCreated: " + @DateCreated.to_s 
   end
 
 private

@@ -4,11 +4,12 @@ load 'Task.rb'
 
 class Project 
 
-  attr_accessor :Tasks # list of tasks 
+  attr_reader :Tasks # list of tasks 
   attr_accessor :StartDate # The starting date of the project
   attr_accessor :EndDate # The ending date of the project 
   attr_accessor :Owner # The stakeholder of the project
 
+public 
   # initiliaze everything for the class
   def initialize
     # TODO 
@@ -22,5 +23,21 @@ class Project
   def setOwner(param) 
     @Owner = param 
   end
+
+  # Add task parameter 
+  def add ( t ) 
+    @Tasks.push( t ) 
+  end 
+
+  # Get task by id
+  def get ( id ) 
+    @Tasks.each { |task|
+      return task if task.ID == id
+    }
+
+    return nil 
+  end 
+
+private 
 
 end 
