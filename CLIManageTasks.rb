@@ -1,7 +1,7 @@
 #author::Simon Symeonidis
 #Simple task manager cli interface. 
 
-class ManageTasks
+class CLIManageTasks
 public 
   #default initializement code 
   def initialize 
