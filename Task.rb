@@ -1,8 +1,7 @@
-#author::Simon Symeonidis 
-#Encapsulation for anything task related
-
 load 'User.rb'
 
+# Author:: Simon Symeonidis 
+#   Encapsulation for anything task related
 class Task 
   attr_accessor :Owner
   attr_accessor :AskedBy
@@ -27,11 +26,13 @@ public
 	@ID = @@count 
     @@count += 1
   end
-
-  def start
+  
+  #Start the task here store the timestamp 
+  def start 
     @Started = Time.new
   end
 
+  #Stop the task, record the difference in time
   def stop 
     @Stopped = Time.new 
     @ActualTime = @Stopped - @Started 
