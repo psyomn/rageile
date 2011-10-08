@@ -5,6 +5,7 @@ load 'Task.rb'
 class Project 
 
   attr_reader :Tasks # list of tasks 
+  attr_reader :ID 
   attr_accessor :StartDate # The starting date of the project
   attr_accessor :EndDate # The ending date of the project 
   attr_accessor :Owner # The stakeholder of the project
@@ -12,7 +13,9 @@ class Project
 public 
   # initiliaze everything for the class
   def initialize
-    # TODO 
+    @ID = @@count
+    @@count += 1
+
     @Tasks = Array.new 
     @StartDate = Time.new 
     @EndDate = nil 
@@ -39,5 +42,5 @@ public
   end 
 
 private 
-
+  @@count = 0
 end 

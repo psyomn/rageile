@@ -12,10 +12,10 @@ class Stakeholder < User
 public
 
   def initialize 
-    @ID = @@ID 
+    @ID = @@count
     @@count += 1 
     @Name = String.new 
-    @Surname = String.mew 
+    @Surname = String.new
     @Company = String.new 
     @Description = String.new 
   end 

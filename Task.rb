@@ -17,8 +17,8 @@ class Task
 public
   # Initialize all 
   def initialize
-    @Owner = User.new
-	@AskedBy = User.new
+    @Owner = nil 
+	@AskedBy = nil 
 	@EstimatedTime = 0
 	@ActualTime = Time.new
     @Created = Time.new
