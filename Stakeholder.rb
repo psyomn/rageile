@@ -4,8 +4,6 @@ load 'User.rb'
 
 class Stakeholder < User 
   attr_reader :ID 
-  attr_accessor :Name
-  attr_accessor :Surname 
   attr_accessor :Company 
   attr_accessor :Description 
 
