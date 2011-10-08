@@ -1,5 +1,6 @@
 #author::Simon Symeonidis 
 # Simple class to offer shorthands in manipulating sqlite3 databases
+# TODO do some thinking whether this should be a singleton
 
 require 'sqlite3'
 
@@ -10,11 +11,11 @@ load 'Task.rb'
 load 'Project.rb'
 
 class DBSqlite3
-  attr_reader :UserSchema
-  attr_reader :TaskSchema
-  attr_reader :ProjectSchema
-  attr_reader :StakeholderSchema 
-  attr_reader :Handle
+  attr_reader :UserSchema # Information on the User schema in SQL 
+  attr_reader :TaskSchema # Information on the Task  schema in SQL 
+  attr_reader :ProjectSchema # Information on the Stakeholder schema in SQL 
+  attr_reader :StakeholderSchema # Information on the Stakeholder schema in SQL 
+  attr_reader :Handle # The database handle 
 
 public 
   def initialize
@@ -42,16 +43,16 @@ public
   # This method will check the infered type and will
   # store the entity accordingly 
   def store(param)
-    if (param.is_a? Stakeholder) ^ (param.is_a? User) 
+    if (param.is_a? Stakeholder) ^ (param.is_a? User) # Make sure that it's ONLY a user (not stakeholder) 
       storeUser(param) 
     elsif param.is_a? Task 
       storeTask(param) 
-    elsif (param.is_a? Stakeholder) 
+    elsif param.is_a? Stakeholder 
       storeStakeholder(param) 
     elsif param.is_a? Project 
       storeProject(param)
     else 
-      puts "I don't know how to store those objects." end
+      puts "I don't know how to store those objects. [" + param.class.to_s + "]" end
   end
 
 private 
