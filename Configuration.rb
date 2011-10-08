@@ -1,4 +1,4 @@
-#author::Simon Symeonidis 
+#author::Simon Symeonidis
 #Simple class which reads a configuration text file
 
 require 'singleton' 
@@ -16,6 +16,7 @@ public
     parse 
   end
 
+  # Only use with test cases. 
   def debug
     p @Attributes 
   end 
