@@ -1,7 +1,8 @@
 load 'User.rb'
 
 # Author:: Simon Symeonidis 
-#   Encapsulation for anything task related
+# Encapsulation for anything task related
+
 class Task 
   attr_accessor :Owner
   attr_accessor :AskedBy
@@ -11,6 +12,7 @@ class Task
 
   attr_reader :Stopped
   attr_reader :Started
+  attr_reader :Comments # comments on tasks 
   attr_reader :ID
 
 public
@@ -23,6 +25,7 @@ public
     @Created = Time.new
     @Started = Time.new 
     @Stopped = Time.new 
+    @Comments = Array.new 
 	@ID = @@count 
     @@count += 1
   end
@@ -47,6 +50,18 @@ public
     + "\nAsked by: " + @AskedBy.to_s \
     + "\nCreated: " + @DateCreated.to_s 
   end
+
+  # Add a comment to the task 
+  def addComment ( comment ) 
+    @Comments.push( comment ) 
+  end 
+
+  # Delete nth comment from the list 
+  def deleteComment ( index ) 
+    if index < @Comments.size 
+      @Comments.delete_at( index ) 
+    end
+  end 
 
 private
   @@count = 0 

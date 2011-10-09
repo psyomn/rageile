@@ -1,12 +1,15 @@
 #author::Simon Symeonidis 
 # Class for storage and manipulation of users  
+# TODO make email unique
 
 class User
 
-  attr_accessor :Email
-  attr_accessor :Name
-  attr_accessor :Surname 
+  attr_accessor :Email # email of the user (this should probably be the unique thing) 
+  attr_accessor :Name # Name of the user
+  attr_accessor :Surname # Surname of the user
+  attr_accessor :Description #Description of the user 
   attr_reader :Nickname # would be good if it were unique
+
   attr_reader :ID 
 
 public
