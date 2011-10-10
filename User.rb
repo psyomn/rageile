@@ -4,7 +4,8 @@
 
 class User
 
-  attr_accessor :Email # email of the user (this should probably be the unique thing) 
+  attr_accessor :Email # email of the user (this should probably be the unique thing)
+  attr_accessor :Password #The password of the user
   attr_accessor :Name # Name of the user
   attr_accessor :Surname # Surname of the user
   attr_accessor :Description #Description of the user 
