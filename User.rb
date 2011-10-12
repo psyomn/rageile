@@ -11,9 +11,9 @@ class User
   attr_accessor :Description #Description of the user 
   attr_reader :Nickname # would be good if it were unique
 
-  attr_reader :ID 
+  attr_reader :ID # The unique identifier for a user
 
-public
+  public
 
   # Default constructor 
   def initialize ( unique_nickname )
@@ -30,13 +30,14 @@ public
   # Convert user info to string 
   def to_s
     "Name: " + @Name.to_s \
-    + "\nSurname: " + @Surname.to_s \
-    + "\nEmail: " + @Email.to_s \
-    + "\nID: " + @ID.to_s 
+      + "\nSurname: " + @Surname.to_s \
+      + "\nEmail: " + @Email.to_s \
+      + "\nID: " + @ID.to_s
   end 
 
-private 
+  private
   @@count = 0
-  @@NicknameList = Array.new 
+  @@NicknameList = Array.new
+  @@EmailList = Array.new
 end 
 

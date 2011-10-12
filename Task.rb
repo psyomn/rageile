@@ -9,6 +9,7 @@ class Task
   attr_accessor :EstimatedTime
   attr_accessor :ActualTime 
   attr_accessor :DateCreated
+  attr_reader :TodoList 
 
   attr_reader :Stopped
   attr_reader :Started
@@ -25,7 +26,8 @@ public
     @Created = Time.new
     @Started = Time.new 
     @Stopped = Time.new 
-    @Comments = Array.new 
+    @Comments = Array.new
+    @TodoList = Task.new 
 	@ID = @@count 
     @@count += 1
   end
