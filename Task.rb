@@ -1,4 +1,5 @@
 load 'User.rb'
+load 'Todo.rb'
 
 # Author:: Simon Symeonidis 
 # Encapsulation for anything task related
@@ -14,6 +15,8 @@ class Task
   attr_reader :Started # start time 
   attr_reader :Comments # comments on tasks 
   attr_reader :ID # unique id of the task 
+ 
+  attr_reader :TodoList 
 
 public
   # Initialize all 
@@ -26,6 +29,7 @@ public
     @Started = Time.new 
     @Stopped = Time.new 
     @Comments = Array.new
+    @TodoList = Array.new 
 	@ID = @@count 
     @@count += 1
   end
@@ -63,6 +67,17 @@ public
     if index < @Comments.size 
       @Comments.delete_at( index ) 
     end
+  end 
+
+  # Add a todo item in the list to show that this artifact
+  # is composed by smaller steps 
+  def addTodoItem(param) 
+    @TodoList.push(param) 
+  end 
+
+  # delete the todo item from the task list 
+  def deleteTodoItem(param)
+    @TodoList.delete(param) 
   end 
 
 private
