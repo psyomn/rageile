@@ -4,22 +4,21 @@ load 'User.rb'
 # Encapsulation for anything task related
 
 class Task 
-  attr_accessor :Owner
-  attr_accessor :AskedBy
-  attr_accessor :EstimatedTime
-  attr_accessor :ActualTime 
-  attr_accessor :DateCreated
-  attr_reader :TodoList 
+  attr_accessor :Owners # Can be assigned to many people
+  attr_accessor :AskedBy # Asked by 1 person 
+  attr_accessor :EstimatedTime # The time estimated to complete artifact 
+  attr_accessor :ActualTime # The actual time taken to complete this
+  attr_accessor :DateCreated # when this artifact was created 
 
-  attr_reader :Stopped
-  attr_reader :Started
+  attr_reader :Stopped # stop time 
+  attr_reader :Started # start time 
   attr_reader :Comments # comments on tasks 
-  attr_reader :ID
+  attr_reader :ID # unique id of the task 
 
 public
   # Initialize all 
   def initialize
-    @Owner = nil 
+    @Owner = Array.new
 	@AskedBy = nil 
 	@EstimatedTime = 0
 	@ActualTime = Time.new
@@ -27,7 +26,6 @@ public
     @Started = Time.new 
     @Stopped = Time.new 
     @Comments = Array.new
-    @TodoList = Task.new 
 	@ID = @@count 
     @@count += 1
   end
@@ -50,7 +48,9 @@ public
     + "\nActual time: " + @ActualTime.to_s \
     + "\nOwner: " + @Owner.to_s \
     + "\nAsked by: " + @AskedBy.to_s \
-    + "\nCreated: " + @DateCreated.to_s 
+    + "\nCreated: " + @DateCreated.to_s \
+    + "\nTodo: \n" 
+
   end
 
   # Add a comment to the task 
