@@ -2,6 +2,7 @@
 # Interface for user management 
 
 require 'Qt4'
+load 'Configuration.rb'
 
 class GUIManageUsers < Qt::Widget 
 
@@ -12,6 +13,8 @@ public
   # Standard initializement 
   def initialize(parent=nil) 
     super() 
+
+    setStyleSheet Configuration.instance.styleSheet 
     
     @Title = "Manage Users Dialog"
     setWindowTitle(@Title) 

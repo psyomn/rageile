@@ -5,14 +5,15 @@ load 'Configuration.rb'
 
 require 'Qt4'
 
-class GUIMain < Qt::Widget
+class GUIMain < Qt::Widget  
 
   def initialize(parent=nil) 
     super() 
     
     setWindowTitle("Rageile")
 
-    setStyleSheet "QWidget {background-color:#202020; color:#00BBDD} "
+    p @CommonStylesheet
+    setStyleSheet Configuration.instance.styleSheet 
 
     layout = Qt::VBoxLayout.new()
     main_label = Qt::Label.new("Manage Modules")
