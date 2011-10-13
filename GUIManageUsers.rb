@@ -51,7 +51,6 @@ private
     prog = Qt::ProgressBar.new()  
 
     item.setText(0, username) 
-    item.setItemWidget(prog) 
     item2.setText(0, "Task 1") 
 
     item.setIcon(0, Qt::Icon.new("gfx/user.png"))
