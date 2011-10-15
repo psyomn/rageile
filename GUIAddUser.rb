@@ -2,6 +2,7 @@
 # Class to handle the creation, addition of a new user 
 
 require 'Qt4'
+load 'Configuration.rb'
 
 class GUIAddUser < Qt::Widget
 
@@ -10,6 +11,9 @@ public
   # Default constructor 
   def initialize(parent=nil) 
     super() 
+
+    setStyleSheet Configuration.instance.styleSheet
+
     label_name = Qt::Label.new("Name")
     label_surname = Qt::Label.new("Surname")
     label_nickname = Qt::Label.new("Nickname")
