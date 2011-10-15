@@ -2,8 +2,9 @@
 # This is the GUI for managing tasks 
 
 require 'Qt4'
+load 'Configuration.rb'
 
-class GUIAddProject < Qt::Widget 
+class GUIManageProjects < Qt::Widget 
   attr_reader :ID 
   attr_reader :WindowTitle
 public 
@@ -11,6 +12,8 @@ public
     super(parent)
 
     @WindowTitle = "Add Project!"
+
+    setStyleSheet Configuration.instance.styleSheet 
 
     currentprojects_label = Qt::Label.new("Current Projects")
     numofprojects_label = Qt::Label.new("Number of Projects: " + 4.to_s) 
@@ -40,7 +43,7 @@ private
 end 
 
 app = Qt::Application.new(ARGV) 
-gui = GUIAddProject.new() 
+gui = GUIManageProjects.new() 
 gui.show()
 app.exec()
 
