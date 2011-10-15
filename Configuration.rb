@@ -14,7 +14,7 @@ public
   def initialize
     @Filename = ".conf" 
     @Attributes = Hash.new 
-    @styleSheet = "QWidget {background-color:#202020; color:#00AABB;} QPushButton{border:1px solid #008877; padding:3px;}"
+    @styleSheet = "QWidget {background-color:#202020; color:#00AABB;} QPushButton{border:1px solid #008877; padding:3px;} QPushButton:hover{background-color:#004455;}"
     parse 
   end
 
