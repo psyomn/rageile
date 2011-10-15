@@ -1,28 +1,13 @@
 #author::Simon Symeonidis 
 #Main interface for whatever. Authtest. 
 
-load 'CLIManageTasks.rb'
+load 'Project.rb'
+load 'GUIMain.rb'
 
-taskManager = CLIManageTasks.new 
-action = String.new 
+projects = Array.new 
 
-# Main loop 
-
-while action !~ /END/i 
-  print "> "
-  action = $stdin.gets
-  action.chomp! 
-
-  case action
-    when "help"
-      puts "help - show help info" 
-    when /task/ 
-      taskManager.execute action 
-    when /end/i 
-      puts "Bye." 
-    else 
-      puts "No such command. Type help"
-  end
-end 
-
+app = Qt::Application.new(ARGV) 
+gui = GUIMain.new 
+gui.show
+app.exec
 

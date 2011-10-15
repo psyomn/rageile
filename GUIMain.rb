@@ -37,11 +37,4 @@ class GUIMain < Qt::Widget
 
 end 
 
-app = Qt::Application.new(ARGV) 
-
-gui = GUIMain.new()
-
-gui.show()
-
-app.exec() 
 
