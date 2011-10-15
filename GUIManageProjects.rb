@@ -9,7 +9,7 @@ class GUIManageProjects < Qt::Widget
   attr_reader :WindowTitle
 public 
   def initialize(parent=nil)
-    super(parent)
+    super()
 
     @WindowTitle = "Add Project!"
 
@@ -42,8 +42,4 @@ public
 private 
 end 
 
-app = Qt::Application.new(ARGV) 
-gui = GUIManageProjects.new() 
-gui.show()
-app.exec()
 

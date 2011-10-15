@@ -76,11 +76,4 @@ private
 
 end 
 
-app = Qt::Application.new(ARGV) 
-
-gui = GUIManageUsers.new() 
-
-gui.show() 
-
-app.exec()
 

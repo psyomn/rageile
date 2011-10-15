@@ -6,9 +6,13 @@ require 'Qt4'
 class GUIManageTasks < Qt::Widget
 
 public 
-  def initialize(param=nil) 
-    super(parent)
-    
+  def initialize(parent=nil) 
+    super()
+    setWindowTitle("Manage Tasks")
+    temp = Qt::Label.new("TODO")
+    layout = Qt::VBoxLayout.new() 
+    layout.addWidget(temp) 
+    setLayout(layout)
   end 
 private 
 
