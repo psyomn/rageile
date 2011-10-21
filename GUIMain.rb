@@ -21,14 +21,18 @@ class GUIMain < Qt::Widget
     
     setWindowTitle("Rageile")
 
-    p @CommonStylesheet
     setStyleSheet Configuration.instance.styleSheet 
 
     layout = Qt::VBoxLayout.new()
     main_label = Qt::Label.new("Manage Modules")
     main_logo = Qt::Pixmap.new "gfx/studios.jpg"
-    gfx_label = Qt::Label.new "test"
-    gfx_label.pixmap = gfx_label 
+    transparent = Qt::Image.new()
+    graphics_scene = Qt::GraphicsScene.new 
+    graphics_view = Qt::GraphicsView.new graphics_scene
+    gfx_label = Qt::Label.new
+
+    gfx_label.setAttribute(Qt::WA_TranslucentBackground)
+    gfx_label.pixmap = main_logo
 
     @manage_users_button = Qt::PushButton.new(tr("Users"))
     @manage_tasks_button = Qt::PushButton.new(tr("Tasks")) 
@@ -42,10 +46,10 @@ class GUIMain < Qt::Widget
     layout.addWidget(@manage_users_button) 
     layout.addWidget(@manage_tasks_button) 
     layout.addWidget(@manage_projects_button) 
-    setLayout(layout) 
     layout.addWidget(gfx_label)
+    setLayout(layout) 
     
-    puts "Main window opened. "
+    # puts "Main window opened. "
   end 
 
 private 

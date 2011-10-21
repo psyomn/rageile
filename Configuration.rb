@@ -1,8 +1,9 @@
-#author::Simon Symeonidis
-#Simple class which reads a configuration text file
-
 require 'singleton' 
 
+#Author::Simon Symeonidis
+# Simple class which reads a configuration text file .conf 
+# It also provides the interfaces with a standard stylesheet which is currently hardcoded
+# TODO in the future, the stylesheet should be acquired from a different folder. 
 class Configuration 
 public 
   include Singleton 

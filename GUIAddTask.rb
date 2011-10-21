@@ -2,6 +2,7 @@
 # interface which allows you to add tasks 
 
 require 'Qt4' 
+load 'Configuration.rb'
 
 class GUIAddTask < Qt::Widget 
 
@@ -9,6 +10,9 @@ public
   def initialize(parent=nil) 
     super(parent) 
     # Labels 
+  
+    setStyleSheet Configuration.instance.styleSheet
+
     description_label = Qt::Label.new("Task Description") 
     askedby_label = Qt::Label.new("Asked by")
     estimatedtime_label = Qt::Label.new("Estimated Time")
@@ -66,8 +70,4 @@ private
   end 
 end 
 
-app = Qt::Application.new(ARGV) 
-gui = GUIAddTask.new() 
-gui.show() 
-app.exec() 
 
