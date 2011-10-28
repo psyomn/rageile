@@ -5,7 +5,7 @@ require 'Qt4'
 load 'Configuration.rb'
 load 'GUIAddTask.rb'
 
-class GUIManageTasks < Qt::Widget
+class GUIManageTasks < Qt::Dialog
   slots 'assignTask()'
   slots 'removeTask()'
 public 
@@ -36,7 +36,7 @@ private
   # Assign a task to someone. 
   def assignTask()
     addtaskgui = GUIAddTask.new 
-    addtaskgui.show
+    addtaskgui.exec
   end
 
   def removeTask()

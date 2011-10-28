@@ -4,7 +4,7 @@
 require 'Qt4'
 load 'Configuration.rb'
 
-class GUIManageUsers < Qt::Widget 
+class GUIManageUsers < Qt::Dialog
 
   attr_reader :Title 
 
@@ -13,8 +13,6 @@ public
   # Standard initializement 
   def initialize(parent=nil) 
     super() 
-
-    setStyleSheet Configuration.instance.styleSheet 
     
     @Title = "Manage Users Dialog"
     setWindowTitle(@Title) 
@@ -41,6 +39,9 @@ public
 
     layout.addWidget(tree) 
     layout.addLayout(grid_layout)
+
+    setStyleSheet Configuration.instance.styleSheet 
+    setAttribute(Qt::WA_DeleteOnClose)
     setLayout(layout) 
   end 
 

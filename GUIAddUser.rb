@@ -4,7 +4,7 @@
 require 'Qt4'
 load 'Configuration.rb'
 
-class GUIAddUser < Qt::Widget
+class GUIAddUser < Qt::Dialog
 
 public 
 

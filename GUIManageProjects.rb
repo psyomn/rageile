@@ -4,7 +4,7 @@
 require 'Qt4'
 load 'Configuration.rb'
 
-class GUIManageProjects < Qt::Widget 
+class GUIManageProjects < Qt::Dialog
   attr_reader :ID 
   attr_reader :WindowTitle
 public 

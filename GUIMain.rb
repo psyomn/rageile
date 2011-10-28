@@ -8,7 +8,7 @@ load 'GUIManageProjects.rb'
 
 require 'Qt4'
 
-class GUIMain < Qt::Widget  
+class GUIMain < Qt::Dialog
   signals 'usersClicked()'
   signals 'tasksClicked()'
   signals 'projectsClicked()'
@@ -59,7 +59,7 @@ private
   # Method to open up the user management dialog 
   def userDialog()
     manageuserui = GUIManageUsers.new(self) 
-    manageuserui.show 
+    manageuserui.exec()
   end 
 
   # Method to open up the project management dialog

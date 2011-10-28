@@ -4,7 +4,7 @@
 require 'Qt4' 
 load 'Configuration.rb'
 
-class GUIAddTask < Qt::Widget 
+class GUIAddTask < Qt::Dialog
 
 public 
   def initialize(parent=nil) 
@@ -20,6 +20,7 @@ public
     datecreated_label = Qt::Label.new("Date Created")
     dependencies_label = Qt::Label.new("Dependencies")
     comments_label = Qt::Label.new("Comments")
+    owners_label = Qt::Label.new("Owners")
     id_label = Qt::Label.new("ID")
 
     # Widgets
@@ -31,6 +32,8 @@ public
     dependencies = Qt::ListWidget.new
     description = Qt::TextEdit.new() 
     comments = Qt::ListWidget.new(self)
+    addowner_button = Qt::PushButton.new("Add Owner")
+    @owners_combo = Qt::ComboBox.new self
     id = Qt::LineEdit.new() 
     ok = Qt::PushButton.new("Add") 
     cancel = Qt::PushButton.new("Cancel")
@@ -54,6 +57,7 @@ public
     elements_layout.addWidget(comments_label,5,0) 
     elements_layout.addWidget(comments,5,1) 
     elements_layout.addWidget(id_label,6,0) 
+    #elements_layout.addWidget(owners_label,
     elements_layout.addWidget(id,6,1) 
 
     buttons_layout.addWidget(ok,0,0) 
@@ -62,11 +66,19 @@ public
     vbox_layout.addLayout(elements_layout)
     vbox_layout.addLayout(buttons_layout) 
 
+    poppulateDummies
+
     setLayout(vbox_layout) 
   end 
 
 private 
   def poppulateDummies
+    @owners_combo.addItem "John" 
+    @owners_combo.addItem "Frap" 
+    @owners_combo.addItem "Nerq" 
+    @owners_combo.addItem "Asfe" 
+    @owners_combo.addItem "Pord" 
+    
   end 
 end 
 

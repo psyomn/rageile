@@ -4,7 +4,7 @@
 load 'Configuration.rb'
 require 'Qt4'
 
-class GUIAddProject < Qt::Widget
+class GUIAddProject < Qt::Dialog
 
 public
   # standard initialization for the gui 
