@@ -2,9 +2,11 @@
 # Interface for user management 
 
 require 'Qt4'
-load 'Configuration.rb'
+require_relative 'Configuration.rb'
+require_relative 'GUIAddUser.rb'
 
 class GUIManageUsers < Qt::Dialog
+  slots 'manageUsersDialog()'
 
   attr_reader :Title 
 
@@ -20,12 +22,14 @@ public
     layout = Qt::VBoxLayout.new()
     grid_layout = Qt::GridLayout.new()
 
-    add_button = Qt::PushButton.new("Add")
+    @add_button = Qt::PushButton.new("Add")
     rem_button = Qt::PushButton.new("Remove")
     ok_button = Qt::PushButton.new("Ok")
     cancel_button = Qt::PushButton.new("Cancel")
+    
+    connect(@add_button, SIGNAL('clicked()'), self, SLOT('manageUsersDialog()'))
 
-    grid_layout.addWidget(add_button,0,0) 
+    grid_layout.addWidget(@add_button,0,0) 
     grid_layout.addWidget(rem_button,0,1) 
     grid_layout.addWidget(ok_button,0,2) 
     grid_layout.addWidget(cancel_button,0,3)
@@ -43,6 +47,7 @@ public
     setStyleSheet Configuration.instance.styleSheet 
     setAttribute(Qt::WA_DeleteOnClose)
     setLayout(layout) 
+
   end 
 
 private 
@@ -73,6 +78,12 @@ private
       end 
       item.insertChild(item.childCount, ito) 
     } 
+  end 
+
+  # Open the dialog to add a new user 
+  def manageUsersDialog()
+    addusergui = GUIAddUser.new(self) 
+    addusergui.exec()
   end 
 
 end 
