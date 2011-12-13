@@ -31,11 +31,11 @@ stake.Company = "Something"
 
 task = Task.new 
 task.AskedBy = user2
-task.Owner = user
+task.addOwner user
 task.ActualTime = Time.new
 
 proj = Project.new 
-proj.Owner = user
+proj.addOwner user
 
 tdb.store(user) 
 tdb.store(user2) 

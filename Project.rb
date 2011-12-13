@@ -8,7 +8,7 @@ class Project
   attr_reader :ID 
   attr_accessor :StartDate # The starting date of the project
   attr_accessor :EndDate # The ending date of the project 
-  attr_accessor :Owner # The stakeholder of the project
+  attr_accessor :Owners # The stakeholders of the project
 
 public 
   # initiliaze everything for the class
@@ -19,7 +19,7 @@ public
     @Tasks = Array.new 
     @StartDate = Time.new 
     @EndDate = nil 
-    @Owner = nil 
+    @Owners = Array.new  
   end 
 
   # set the owner of the project 
@@ -28,17 +28,22 @@ public
   end
 
   # Add task parameter 
-  def add ( t ) 
+  def add(t) 
     @Tasks.push( t ) 
   end 
 
   # Get task by id
-  def get ( id ) 
+  def get(id) 
     @Tasks.each { |task|
       return task if task.ID == id
     }
 
     return nil 
+  end 
+
+  # add a user as an owner to the project
+  def addOwner(user)
+    @Owners.push(user)
   end 
 
 private 

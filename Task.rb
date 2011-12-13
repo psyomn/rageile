@@ -24,7 +24,7 @@ class Task
 public
   # Initialize all 
   def initialize
-    @Owner = Array.new
+    @Owners = Array.new
 	@AskedBy = nil 
 	@EstimatedTime = 0
 	@ActualTime = Time.new
@@ -81,6 +81,11 @@ public
   # delete the todo item from the task list 
   def deleteTodoItem(param)
     @TodoList.delete(param) 
+  end 
+
+  # Add a user to the owner list 
+  def addOwner(user)
+    @Owners.push(user) 
   end 
 
 private
