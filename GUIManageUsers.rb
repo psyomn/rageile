@@ -7,6 +7,7 @@ require_relative 'GUIAddUser.rb'
 
 class GUIManageUsers < Qt::Dialog
   slots 'manageUsersDialog()'
+  slots 'removeUser()'
 
   attr_reader :Title 
 
@@ -23,25 +24,26 @@ public
     grid_layout = Qt::GridLayout.new()
 
     @add_button = Qt::PushButton.new("Add")
-    rem_button = Qt::PushButton.new("Remove")
-    ok_button = Qt::PushButton.new("Ok")
-    cancel_button = Qt::PushButton.new("Cancel")
+    @rem_button = Qt::PushButton.new("Remove")
+    @ok_button = Qt::PushButton.new("Ok")
+    @cancel_button = Qt::PushButton.new("Cancel")
     
     connect(@add_button, SIGNAL('clicked()'), self, SLOT('manageUsersDialog()'))
+    connect(@rem_button, SIGNAL('clicked()'), self, SLOT('removeUser()'))
 
     grid_layout.addWidget(@add_button,0,0) 
-    grid_layout.addWidget(rem_button,0,1) 
-    grid_layout.addWidget(ok_button,0,2) 
-    grid_layout.addWidget(cancel_button,0,3)
+    grid_layout.addWidget(@rem_button,0,1) 
+    grid_layout.addWidget(@ok_button,0,2) 
+    grid_layout.addWidget(@cancel_button,0,3)
 
-    tree = Qt::TreeWidget.new()
-    tree.setHeaderLabels(['Users']) 
+    @tree = Qt::TreeWidget.new()
+    @tree.setHeaderLabels(['Users']) 
 
-    populateDummies(tree, "George", 10)
-    populateDummies(tree, "Justin", 3) 
-    populateDummies(tree, "Matt", 1) 
+    populateDummies(@tree, "George", 10)
+    populateDummies(@tree, "Justin", 3) 
+    populateDummies(@tree, "Matt", 1) 
 
-    layout.addWidget(tree) 
+    layout.addWidget(@tree) 
     layout.addLayout(grid_layout)
 
     setStyleSheet Configuration.instance.styleSheet 
@@ -51,6 +53,11 @@ public
   end 
 
 private 
+
+  # Remove user from the list 
+  def removeUser()
+    Qt::MessageBox.question(self, "Remove User", "Are you sure you want to remove user : " + @tree.selectedItems[0].text(0) + " ?")
+  end 
 
   # This is mainly here for testing 
   #   param is a tree obj

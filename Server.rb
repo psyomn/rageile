@@ -1,5 +1,6 @@
 # Generic server for the main program to listen from clients
-# and interact with 
+# and interact with. This shall be a front end to the main
+# system. 
 #Author::Simon Symeonidis 
 
 require 'socket'
