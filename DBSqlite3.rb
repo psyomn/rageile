@@ -19,7 +19,7 @@ class DBSqlite3
 
 public 
   def initialize
-    @UserSchema =\
+    @UserSchema =
       "CREATE TABLE IF NOT EXISTS User(ID INTEGER PRIMARY KEY ASC, " +\
       "email char(255), name char(50), surname char(50), nickname char(50) )"
     @TaskSchema = 
