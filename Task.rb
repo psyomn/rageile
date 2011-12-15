@@ -1,5 +1,5 @@
-load 'User.rb'
-load 'Todo.rb'
+require_relative 'User.rb'
+require_relative 'Todo.rb'
 
 # Author:: Simon Symeonidis 
 # Encapsulation for anything task related

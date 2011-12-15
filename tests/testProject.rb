@@ -3,8 +3,8 @@
 
 Dir.chdir("../")
 
-load '../Task.rb' 
-load '../Project.rb' 
+require_relative '../Task.rb' 
+require_relative '../Project.rb' 
 
 t = Task.new 
 p = Project.new 
