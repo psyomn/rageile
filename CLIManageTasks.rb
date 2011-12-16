@@ -15,25 +15,24 @@ public
     start 
   end 
 
-  # Main execution loop
+  # Main execution loop. @Done is set
+  # to true in the execute function if 
+  # the user enters "end"
   def start
-
     while !@Done do 
       print ">" 
       cmd = $stdin.gets
-      
       if cmd != nil 
         cmd.chomp! 
         execute(cmd) 
       else 
         @Done = true 
       end
-    
     end 
-
   end 
 
-  # Parse the action to perform. 
+  # Parse the action to perform. Each
+  # command is mapped to a function. 
   def execute(param) 
     case param
       when "createTask"
@@ -44,6 +43,12 @@ public
         createTask
       when "createproject"
         createProject
+      when "edituser" 
+        editUser
+      when "editproject" 
+        editProject
+      when "editTask"
+        editTask
       when "addtasktoproject"
         addTaskToProject
       when "addusertoproject"
@@ -54,6 +59,8 @@ public
         showProjects
       when "showtasks"
         showTasks
+      when "showall"
+        showAll
       when "end"
         @Done = true 
       else 
@@ -62,7 +69,8 @@ public
   end
 
 private 
-  # Add a user to the project
+  # Add a user to the project by specifying the unique ids
+  # of both.
   def addUserToProject
     print " Users: " 
     
@@ -83,6 +91,24 @@ private
     Central.instance.addUserToProject(usrid,proid)
   end
 
+  # To add a task to a project by specifying the unique
+  # ids of both
+  def addTaskToProject
+    puts "Tasks:"
+    Central.instance.Tasks.each do |task|
+      puts task.ID.to_s + " " + task.Description
+    end 
+    puts "Projects:"
+    Central.instance.Projects.each do |project| 
+      puts project.ID.to_s + " " + project.Description
+    end 
+    puts "Assign Task ID:"
+    taskid = $stdin.gets.to_i 
+    puts "To project ID:" 
+    projid = $stdin.gets.to_i
+    Central.instance.addTaskToProject(taskid,projid) 
+  end 
+
   # delete task from a project 
   def deleteTask(id) 
     Central.instance.deleteTask(id) 
@@ -98,24 +124,8 @@ private
   def search(param) 
   end 
 
-  # To add a task to a project
-  def addTaskToProject
-    puts "Tasks:"
-    Central.instance.Tasks.each do |task|
-      puts task.ID.to_s + " " + task.Description
-    end 
-    puts "Projects:"
-    Central.instance.Projects.each do |project| 
-      puts project.ID.to_s + " " + project.Description
-    end 
-    puts "Assign Task ID:"
-    taskid = $stdin.gets.to_i 
-    puts "To project ID:" 
-    projid = $stdin.gets.to_i
-    
-  end 
-
-  # function to create a new user
+  # Function to create a new user. Raises
+  # an exception if the user already exists.
   def createUser
     puts "User nickname:"
     begin
@@ -154,6 +164,64 @@ private
   # Print Users
   def showUsers
     puts Central.instance.Users.to_s
+  end 
+
+  # Print all 
+  def showAll
+    showTasks
+    showProjects
+    showUsers
+  end 
+
+  # Edit a particular user
+  def editUser
+    showUsers
+    print "Edit user with ID: " 
+    userid = $stdin.gets.to_i 
+
+    user = Central.instance.getUserByID(userid) 
+    
+    print "(Press ctrl+d in order not to change a value)"
+    print "New Name:"
+    user.Name = $stdin.gets.chomp!
+    print "New Surname:"
+    user.Surname = $stdin.gets.chomp!
+    
+    print "New Email:" 
+    begin 
+      new_user_name = $stdin.get.chomp! 
+      user.setNewNickname(new_user_name) 
+    rescue => details
+      puts details.message
+      retry
+    end
+
+    print "New Email:" 
+    begin
+      new_email = $stdin.gets.chomp! 
+      user.setNewEmail(new_email)
+    rescue => details 
+      puts details.message
+      retry
+    end
+    print "New Password:" 
+    user.Password = $stdin.gets.chomp!
+    print "New description:"
+    user.Description = $stdin.gets.chomp!
+  end 
+
+  # Edit a particular project
+  def editProject
+    showProjects
+    print "Edit project with ID: " 
+    proid = $stdin.gets.to_i
+  end 
+
+  # Edit a particular task
+  def editTask
+    showTasks
+    print "Edit task with ID: " 
+    taskid = $stdin.gets.to_i
   end 
 
 end
