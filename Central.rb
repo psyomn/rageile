@@ -1,6 +1,5 @@
 require 'singleton' 
 
-# Own classes
 require_relative 'Project.rb'
 require_relative 'Task.rb'
 require_relative 'User.rb'
