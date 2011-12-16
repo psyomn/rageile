@@ -3,17 +3,16 @@
 # TODO make email unique
 
 class User
-
-  attr_accessor :Email # email of the user (this should probably be the unique thing)
-  attr_accessor :Password #The password of the user
   attr_accessor :Name # Name of the user
   attr_accessor :Surname # Surname of the user
   attr_accessor :Description #Description of the user 
-  attr_reader :Nickname # would be good if it were unique
+  attr_accessor :Password #The password of the user
+  attr_reader :Email # email of the user (this should probably be the unique thing)
+  attr_reader :Nickname # A nickname should be thought of like a username
 
   attr_reader :ID # The unique identifier for a user
 
-  public
+public
 
   # Default constructor 
   def initialize ( unique_nickname )
@@ -23,6 +22,7 @@ class User
     @Surname = String.new
     @Nickname = unique_nickname 
     @@NicknameList.push unique_nickname
+    @@EmailList = Array.new
     @ID = @@count 
     @@count += 1
   end 
@@ -36,7 +36,27 @@ class User
     + " ID: " + @ID.to_s \
   end 
 
-  private
+  def setNewNickname(newnick)
+    if !@@NicknameList.include? newnick
+      @@NicknameList.delete newnick 
+      @Nickname = newnick 
+      @NicknameList.push @Nickname
+    else
+      puts "Another user is using that nickname."
+    end 
+  end 
+
+  def setNewEmail(newemail)
+    if !@@EmailList.include? @Email
+      @@EmailList.delete @Email
+      @Email = newemail
+      @@EmailList.push @Email
+    else
+      puts "User with that email already exists!"
+    end 
+  end
+
+private
   @@count = 0
   @@NicknameList = Array.new
   @@EmailList = Array.new
