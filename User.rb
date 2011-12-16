@@ -42,7 +42,7 @@ public
       @Nickname = newnick 
       @NicknameList.push @Nickname
     else
-      puts "Another user is using that nickname."
+      raise "Another user is using that nickname."
     end 
   end 
 
@@ -52,7 +52,7 @@ public
       @Email = newemail
       @@EmailList.push @Email
     else
-      puts "User with that email already exists!"
+      raise "User with that email already exists!"
     end 
   end
 
