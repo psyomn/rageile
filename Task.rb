@@ -51,12 +51,12 @@ public
   # To string method 
   def to_s
     "Task Id: " + @ID.to_s \
-    + "\nEstimated time: " + @EstimatedTime.to_s \
-    + "\nActual time: " + @ActualTime.to_s \
-    + "\nOwner: " + @Owner.to_s \
-    + "\nAsked by: " + @AskedBy.to_s \
-    + "\nCreated: " + @DateCreated.to_s \
-    + "\nTodo: \n" 
+    + " Estimated time: " + @EstimatedTime.to_s \
+    + " Actual time: " + @ActualTime.to_s \
+    + " Owner: " + @Owner.to_s \
+    + " Asked by: " + @AskedBy.to_s \
+    + " Created: " + @DateCreated.to_s \
+    + " Todo: \n" 
 
   end
 

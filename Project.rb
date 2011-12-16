@@ -1,7 +1,8 @@
-#author::Simon Symeonidis 
-
 require_relative 'Task.rb'
 
+# Class which takes care of information and functionality
+# of projects.
+#Author::Simon Symeonidis 
 class Project 
 
   attr_reader :Tasks # list of tasks 
@@ -23,28 +24,22 @@ public
     @Owners = Array.new  
   end 
 
-  # set the owner of the project 
-  def setOwner(param) 
-    @Owner = param 
-  end
-
   # Add task parameter 
-  def add(t) 
+  def addTask(t) 
     @Tasks.push(t) 
   end 
 
   # Get task by id
-  def get(id) 
-    @Tasks.each { |task|
+  def getTaskByID(id) 
+    @Tasks.each do |task|
       return task if task.ID == id
-    }
-
+    end
     return nil 
   end 
 
   # add a user as an owner to the project
   def addOwner(user)
-    @Owners.push(user)
+    @Owners.push(user) if !@Owners.include? user
   end 
 
   # stringify the information of the project

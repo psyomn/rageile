@@ -62,20 +62,25 @@ public
   end
 
 private 
-  # add task to a project
-  def addTaskToProject
-    print " Task description: " 
-    desc = $stdin.gets
-    desc.chomp! 
+  # Add a user to the project
+  def addUserToProject
+    print " Users: " 
     
-    puts "  -1 don't assign user"
     Central.instance.Users.each_with_index do |user,i|
       puts "  " + i.to_s + " " + user.to_s
     end
 
+    Central.instance.Projects.each_with_index do |project,i| 
+      puts "  " + i.to_s + " " + project.to_s 
+    end 
+
     # See who we want to add to this to
-    print " Assign user:"
+    print " Assign user id :"
     usrid = $stdin.gets.to_i 
+    print " To project id  :"
+    proid = $stdin.gets.to_i 
+
+    Central.instance.addUserToProject(usrid,proid)
   end
 
   # delete task from a project 
@@ -99,23 +104,20 @@ private
     Central.instance.Tasks.each do |task|
       puts task.ID.to_s + " " + task.Description
     end 
-
     puts "Projects:"
     Central.instance.Projects.each do |project| 
       puts project.ID.to_s + " " + project.Description
     end 
-
     puts "Assign Task ID:"
     taskid = $stdin.gets.to_i 
     puts "To project ID:" 
-    projid = $stdin.gets.to_i 
-
+    projid = $stdin.gets.to_i
+    
   end 
 
   # function to create a new user
   def createUser
     puts "User nickname:"
-    
     begin
       nick = $stdin.gets.chomp!
       Central.instance.createUser(nick) 
@@ -123,7 +125,13 @@ private
       puts details.message
       retry
     end
-    
+  end 
+
+  # function to create a new project
+  def createProject
+    print "Project Description: "
+    desc = $stdin.gets.chomp! 
+    Central.instance.createProject(desc)
   end 
 
   # Create a new task 

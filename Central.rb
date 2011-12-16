@@ -79,11 +79,26 @@ public
 
   # Add a user to a project
   def addUserToProject(userid,projectid)
+    user = getUserByID(userid) 
+    project = getProjectByID(projectid) 
+
+    if user != nil and project != nil 
+      project.addOwner(user)
+    else 
+      puts "Project or user not found. "
+    end 
   end 
 
   # Add a task to a project
   def addTaskToProject(taskid,projectid)
-     
+    task = getTaskByID(taskid) 
+    project = getProjectByID(projectid) 
+
+    if task != nil and project != nil 
+      project.addTask(task)
+    else
+      puts "Task or project has not been found."
+    end 
   end 
 
   # Delete entity with specified id
