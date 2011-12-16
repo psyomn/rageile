@@ -1,8 +1,8 @@
+require_relative 'User.rb' 
+
 #author::Simon Symeonidis 
-#Class to handle simple comments 
-
-load 'User.rb' 
-
+# Class to handle simple comments 
+# TODO figure out why the hell this is here...
 class Comment 
   attr_reader :ID # the id of the current task 
   attr_reader :Owner # the user that commented on this 
