@@ -52,7 +52,7 @@ public
       @Email = newemail
       @@EmailList.push @Email
     else
-      raise "User with that email already exists!"
+      raise "User with that email already exists."
     end 
   end
 
