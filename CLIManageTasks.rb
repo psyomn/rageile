@@ -1,11 +1,11 @@
-#author::Simon Symeonidis
-#Simple task manager cli interface. 
-
 require_relative 'Central.rb'
 
+#author::Simon Symeonidis
+# Simple task manager cli interface. This is mainly to 
+# make sure that the integrity of the model is ok. 
+# Not goint to spend too much time here since this is
+# mainly for testing :). 
 class CLIManageTasks
-
-  attr :Done 
 
 public 
   #default initializement code 
@@ -69,6 +69,10 @@ public
   end
 
 private 
+  
+  # this is used for the execution loop
+  attr :Done 
+
   # Add a user to the project by specifying the unique ids
   # of both.
   def addUserToProject
