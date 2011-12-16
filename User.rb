@@ -40,7 +40,7 @@ public
     if !@@NicknameList.include? newnick
       @@NicknameList.delete newnick 
       @Nickname = newnick 
-      @NicknameList.push @Nickname
+      @@NicknameList.push @Nickname
     else
       raise "Another user is using that nickname."
     end 

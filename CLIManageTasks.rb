@@ -181,16 +181,24 @@ private
 
     user = Central.instance.getUserByID(userid) 
     
-    print "(Press ctrl+d in order not to change a value)"
+    if user == nil 
+      puts "No such user."
+      return
+    end
+
+    puts "(Press ctrl+d in order not to change a value)"
     print "New Name:"
-    user.Name = $stdin.gets.chomp!
+    newname = $stdin.gets 
+    user.Name = newname.chomp! if newname != nil 
+
     print "New Surname:"
-    user.Surname = $stdin.gets.chomp!
+    newsurname = $stdin.gets
+    user.Surname = newsurname.chomp! if newsurname != nil 
     
-    print "New Email:" 
+    print "New Nickname:" 
     begin 
-      new_user_name = $stdin.get.chomp! 
-      user.setNewNickname(new_user_name) 
+      new_user_name = $stdin.gets
+      user.setNewNickname(new_user_name.chomp!) if new_user_name != nil  
     rescue => details
       puts details.message
       retry
@@ -198,16 +206,20 @@ private
 
     print "New Email:" 
     begin
-      new_email = $stdin.gets.chomp! 
-      user.setNewEmail(new_email)
+      new_email = $stdin.gets 
+      user.setNewEmail(new_email.chomp!) if new_email != nil 
     rescue => details 
       puts details.message
       retry
     end
+
     print "New Password:" 
-    user.Password = $stdin.gets.chomp!
+    newpassword = $stdin.gets
+    user.Password = newpassword.chomp! if  newpassword != nil 
+
     print "New description:"
-    user.Description = $stdin.gets.chomp!
+    newdescription = $stdin.gets
+    user.Description = newdescription.chomp! if newdescription != nil 
   end 
 
   # Edit a particular project
