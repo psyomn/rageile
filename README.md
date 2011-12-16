@@ -24,6 +24,7 @@ Version 1.0
 -----------
 * Functionality of qt GUIs implemented [standalone] 
 * Protocol design
+* Schema complete, persistance working
 
 Version 2.0 
 -----------
