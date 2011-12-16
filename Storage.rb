@@ -1,10 +1,9 @@
-#author::Simon Symeonidis 
-# Class which should take care of storing different objects
-
 load 'Configuration.rb'
 load 'DBSqlite3.rb'
 load 'DBMySQL.rb'
 
+#author::Simon Symeonidis 
+# Class which should take care of storing different objects
 class Storage 
 
   attr_reader :Database
@@ -12,8 +11,7 @@ class Storage
 public 
   # default initializement 
   def initialize 
-    conf = Configuration.instance 
-    case conf.Attributes["DATABASE"]
+    case Configuration.instance.Attributes["DATABASE"]
       when "SQLITE"
         @Database = DBSqlite3.new 
       when "MYSQL" 
