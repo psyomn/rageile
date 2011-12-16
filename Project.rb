@@ -1,4 +1,5 @@
 require_relative 'Task.rb'
+require_relative 'User.rb'
 
 # Class which takes care of information and functionality
 # of projects.
