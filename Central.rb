@@ -27,28 +27,99 @@ public
 
 public 
 
+  # Return a user by id number
+  def getUserByID(id) 
+    ret = nil
+    @Users.each do |user|
+      ret = user if user.ID == id 
+    end 
+
+    return ret
+  end 
+
+  # Return a project by id number 
+  def getProjectByID(id)
+    ret = nil 
+    @Projects.each do |project| 
+      ret = project if project.ID == id 
+    end 
+
+    return ret 
+  end 
+
+  # Returns a task by id number
+  def getTaskByID(id) 
+    ret = nil 
+
+    @Tasks.each do |task| 
+      ret = task if task.ID == id
+    end 
+  end 
+
+  # Create a new user
+  def createUser(nickname) 
+    usr = User.new(nickname)
+    backend_addUser(usr) 
+  end 
+
+  # create a project with a description
+  def createProject(description) 
+    project = Project.new 
+    project.Description = description 
+    @Projects.push(project) 
+  end 
+
+  # create a task and store inside task 
+  # repository
+  def createTask(description) 
+    task = Task.new
+    task.Description = description
+    @Tasks.push task
+  end 
+
+  # Add a user to a project
+  def addUserToProject(userid,projectid)
+  end 
+
   # Add a task to a project
-  def addTask
-  end 
-
-  # Add a project. 
-  def addProject
-  end 
-
-  # Add a user. 
-  def addUser
+  def addTaskToProject(taskid,projectid)
+     
   end 
 
   # Delete entity with specified id
   def deleteUser(id) 
+    user_to_remove = getUserByID(id)
+
+    if user_to_remove != nil 
+      @Users.delete(user_to_remove)
+    else
+      puts "No such user."
+    end 
   end
 
   # Delete entity with specified id
   def deleteProject(id) 
+    project_to_remove = getProjectByID(id)
+
+    if project_to_remove != nil 
+      @Projects.delete(project_to_remove)
+    else 
+      puts "No such project. "
+    end 
   end 
 
   # Delete entity with specified id
   def deleteTask(id)
+    task_to_remove = nil
+    @Tasks.each do |task|
+      task_to_remove = task if task.ID == id 
+    end 
+    
+    if task_to_remove != nil 
+      @Tasks.delete(task_to_remove)
+    else
+      puts "No such task to delete"
+    end 
   end 
 
 private 

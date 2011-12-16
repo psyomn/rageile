@@ -29,10 +29,11 @@ class User
 
   # Convert user info to string 
   def to_s
-    "Name: " + @Name.to_s \
-      + "\nSurname: " + @Surname.to_s \
-      + "\nEmail: " + @Email.to_s \
-      + "\nID: " + @ID.to_s
+    "Nickname: " + @Nickname \
+    + " Name: " + @Name.to_s \
+    + " Surname: " + @Surname.to_s \
+    + " Email: " + @Email.to_s \
+    + " ID: " + @ID.to_s \
   end 
 
   private

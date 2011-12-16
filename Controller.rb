@@ -1,8 +1,8 @@
-# Class that controls the source of the input 
-
 require_relative 'CLIManageTasks.rb'
 require_relative 'Server.rb'
 
+# Class that controls the source of the input 
+#Author::Simon Symeonidis 
 class Controller 
 
   attr_reader :Mode

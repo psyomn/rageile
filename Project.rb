@@ -9,6 +9,7 @@ class Project
   attr_accessor :StartDate # The starting date of the project
   attr_accessor :EndDate # The ending date of the project 
   attr_accessor :Owners # The stakeholders of the project
+  attr_accessor :Description # Simple description of the project 
 
 public 
   # initiliaze everything for the class
@@ -50,6 +51,10 @@ public
   def to_s 
     str = String.new 
     
+    str += @ID.to_s
+    str += " - " 
+    str += @Description
+    str += " - "
     str += @Owners.to_s
     return str 
   end 

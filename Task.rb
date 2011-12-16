@@ -61,14 +61,14 @@ public
   end
 
   # Add a comment to the task 
-  def addComment ( comment ) 
-    @Comments.push( comment ) 
+  def addComment(comment) 
+    @Comments.push(comment) 
   end 
 
   # Delete nth comment from the list 
-  def deleteComment ( index ) 
+  def deleteComment(index) 
     if index < @Comments.size 
-      @Comments.delete_at( index ) 
+      @Comments.delete_at(index) 
     end
   end 
 
