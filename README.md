@@ -12,7 +12,7 @@ have the form of a calendar (meaning I'll be able to log my homework :)).
 Features
 --------
 Here are planned features. Don't expect anything accurate here. My time is limited
-and features mau change! 
+and features may change! 
 
 Version 0.5
 -----------
@@ -34,3 +34,7 @@ Version 2.0
 Version 2.1
 -----------
 * Different clients for the server
+
+Version 2.2
+-----------
+* Task can have other tasks as dependencies.
