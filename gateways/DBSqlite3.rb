@@ -21,19 +21,6 @@ class DBSqlite3
 
 public 
   def initialize
-    @UserSchema =
-      "CREATE TABLE IF NOT EXISTS User(ID INTEGER PRIMARY KEY ASC, " +\
-      "email char(255), name char(50), surname char(50), nickname char(50) )"
-    @TaskSchema = 
-      "CREATE TABLE IF NOT EXISTS Task(ID INTEGER PRIMARY KEY ASC, " +\
-      "OWNER_ID INTEGER, askedbyID INTEGER, estimated_time INTEGER, " +\
-      "actual_time INTEGER, date_created DATETIME, " +\
-      "FOREIGN KEY(OWNER_ID) references User(ID), " +\
-      "FOREIGN KEY(askedbyID) references User(ID) )"
-    @ProjectSchema =
-      "CREATE TABLE IF NOT EXISTS Project(ID INTEGER PRIMARY KEY ASC, " +\
-      "startdate DATETIME, enddate DATETIME, ownerID INTEGER, " +\
-      "FOREIGN KEY(ownerID) references User(ID) )"
     @StakeholderSchema = 
       "" # TODO 
 

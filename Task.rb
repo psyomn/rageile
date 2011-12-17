@@ -57,7 +57,6 @@ public
     + " Asked by: " + @AskedBy.to_s \
     + " Created: " + @DateCreated.to_s \
     + " Todo: \n" 
-
   end
 
   # Add a comment to the task 
