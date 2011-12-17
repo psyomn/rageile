@@ -2,6 +2,7 @@
 # Simple class to offer shorthands in manipulating sqlite3 databases
 # TODO do some thinking whether this should be a singleton
 # TODO the sql should be prepared before anything else happens 
+# TODO this needs to be removed!
 
 require 'sqlite3'
 
