@@ -27,7 +27,9 @@ public
 
 private
 
-  # read the file and add the attributes
+  # Read the file and add the attributes to the hash map. 
+  # The text file should in the format of
+  # <Attributename><whitespace><Attributevalue><newline> 
   def parse
     if File.exist? @Filename 
       File.open(@Filename).each{ |line| 
