@@ -7,6 +7,7 @@ load 'Configuration.rb'
 class GUIAddTask < Qt::Dialog
 
 public 
+  # Default initializement for a qt dialog.
   def initialize(parent=nil) 
     super(parent) 
     # Labels 
