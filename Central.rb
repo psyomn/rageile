@@ -137,6 +137,9 @@ public
   end 
 
 private 
+  
+  # This section should hide information
+  # about how the data structures have been implemented. 
 
   # add a user to the whole list 
   def backend_addUser(param) 
