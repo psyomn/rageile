@@ -7,6 +7,15 @@ class Controller
 
   attr_reader :Mode
 
+  # Standard initialization requires a parameter
+  # which is the mode in which the application 
+  # should run. This is inserted form the run.rb 
+  # script. 
+  # Current possible parameters are : 
+  #   cli 
+  #   clientserver
+  # !Warning! clientserver is not implemented at
+  # the momment. 
   def initialize(mode) 
     @Mode = mode 
 
@@ -26,6 +35,7 @@ private
   end 
 
   # The implementation of the server-client interface
+  # TODO
   def clientserver
   end 
 
