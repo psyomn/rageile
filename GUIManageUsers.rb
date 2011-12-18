@@ -1,10 +1,9 @@
-#author::Simon Symeonidis 
-# Interface for user management 
-
 require 'Qt4'
 require_relative 'Configuration.rb'
 require_relative 'GUIAddUser.rb'
 
+#author::Simon Symeonidis 
+# Interface for user management 
 class GUIManageUsers < Qt::Dialog
   slots 'manageUsersDialog()'
   slots 'removeUser()'
