@@ -1,5 +1,5 @@
 #author::Simon Symeonidis 
-#Main interface for whatever. Authtest. 
+# This boots up the main interface.
 
 load 'Project.rb'
 load 'GUIMain.rb'
