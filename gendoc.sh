@@ -1,0 +1,1 @@
+rdoc `find . -name \*.rb` 
