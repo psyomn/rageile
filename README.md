@@ -19,22 +19,28 @@ Version 0.5
 * Have the completed CLI interface which will work with the model
 * Mocks of GUIs for the qt-ruby interface complete
 * Persistance [Schema standard defined]
+* Documentation re-evaluation
+* CLI manual 
 
 Version 1.0 
 -----------
 * Functionality of qt GUIs implemented [standalone] 
-* Protocol design
+* Protocol Design
 * Schema complete, persistance working
+* Documentation re-evaluation
 
 Version 2.0 
 -----------
 * Server implementation complete
 * CLI interface for interaction with the server
+* Documentation re-evaluation
 
 Version 2.1
 -----------
 * Different clients for the server
+* Documentation re-evaluation
 
 Version 2.2
 -----------
 * Task can have other tasks as dependencies.
+* Documentation re-evaluation

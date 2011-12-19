@@ -5,19 +5,32 @@ require_relative 'Todo.rb'
 # Encapsulation for anything task related
 # TODO Must add Task type 
 class Task 
-  attr_accessor :Owners # Can be assigned to many people
-  attr_accessor :AskedBy # Asked by 1 person 
-  attr_accessor :EstimatedTime # The time estimated to complete artifact 
-  attr_accessor :ActualTime # The actual time taken to complete this
-  attr_accessor :DateCreated # when this artifact was created 
+  # Can be assigned to many people
+  attr_accessor :Owners 
+  # Asked by 1 person. This is added because when someone asks something
+  # and later on requirements are evaluated and found out to be inconsistent,
+  # we have a subject we can look back to and 
+  attr_accessor :AskedBy 
+  # The time estimated to complete artifact 
+  attr_accessor :EstimatedTime 
+  # The actual time taken to complete this
+  attr_accessor :ActualTime 
+  # when this artifact was created 
+  attr_accessor :DateCreated 
   # attr_accessor :Dependencies # If this task depends on other tasks TODO check if we actually want this
+  # Description of the task
   attr_accessor :Description # TODO 
 
-  attr_reader :Stopped # stop time 
-  attr_reader :Started # start time 
-  attr_reader :Comments # comments on tasks 
-  attr_reader :ID # unique id of the task 
+  # stop time 
+  attr_reader :Stopped 
+  # start time
+  attr_reader :Started 
+  # comments on tasks 
+  attr_reader :Comments 
+  # unique id of the task 
+  attr_reader :ID 
  
+  # TODO need to see if I want this level of nesting
   attr_reader :TodoList 
 
 public
