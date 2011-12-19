@@ -5,7 +5,7 @@ require 'Qt4'
 load 'Configuration.rb'
 
 class GUIManageProjects < Qt::Dialog
-  attr_reader :ID 
+  # The window title of the GUI
   attr_reader :WindowTitle
 public 
   def initialize(parent=nil)
