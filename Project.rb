@@ -5,13 +5,18 @@ require_relative 'User.rb'
 # of projects.
 #Author::Simon Symeonidis 
 class Project 
-
-  attr_reader :Tasks # list of tasks 
-  attr_reader :ID  # Unique id of the project
-  attr_accessor :StartDate # The starting date of the project
-  attr_accessor :EndDate # The ending date of the project 
-  attr_accessor :Owners # The stakeholders of the project
-  attr_accessor :Description # Simple description of the project 
+  # list of tasks 
+  attr_reader :Tasks 
+  # Unique id of the project
+  attr_reader :ID  
+  # The starting date of the project
+  attr_accessor :StartDate 
+  # The ending date of the project 
+  attr_accessor :EndDate 
+  # The stakeholders of the project
+  attr_accessor :Owners 
+  # Simple description of the project 
+  attr_accessor :Description 
 
 public 
   # initiliaze everything for the class
