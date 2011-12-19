@@ -5,11 +5,13 @@ require 'singleton'
 #Author::Simon Symeonidis 
 def DBHandle 
   include Singleton 
-  attr_accessor :Handle
+  attr_reader :Handle
 
   # Upon initializement, create the connection to the database. 
   # The datbase name is retrieved from the .conf text file. 
   # Therefore notice how the Configuration class is used. 
+  # Also, the database type is taken from the .conf file
+  # and the appropriate handle is generated here as well.
   def initialize 
     @Handle = SQLite3::Database.new(Configuration.instance.Attributes["DATABASE_NAME"]) 
   end 
