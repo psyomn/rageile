@@ -4,14 +4,13 @@ require_relative 'Todo.rb'
 # Author:: Simon Symeonidis 
 # Encapsulation for anything task related
 # TODO Must add Task type 
-
 class Task 
   attr_accessor :Owners # Can be assigned to many people
   attr_accessor :AskedBy # Asked by 1 person 
   attr_accessor :EstimatedTime # The time estimated to complete artifact 
   attr_accessor :ActualTime # The actual time taken to complete this
   attr_accessor :DateCreated # when this artifact was created 
-  attr_accessor :Dependencies # If this task depends on other tasks TODO check if we actually want this
+  # attr_accessor :Dependencies # If this task depends on other tasks TODO check if we actually want this
   attr_accessor :Description # TODO 
 
   attr_reader :Stopped # stop time 
