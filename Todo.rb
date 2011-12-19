@@ -1,6 +1,5 @@
 #author::Simon Symeonidis
 # Class to store the todo lists for whatever that might be needed 
-
 class Todo 
   attr_accessor :Description # Description of todo item 
   attr_reader :Done # Done or not 
