@@ -1,7 +1,6 @@
 #author::Simon Symeonidis 
 # Class for storage and manipulation of users  
 # TODO make email unique
-
 class User
   attr_accessor :Name # Name of the user
   attr_accessor :Surname # Surname of the user
@@ -36,6 +35,11 @@ public
     + " ID: " + @ID.to_s \
   end 
 
+  # When a user is edited, we set this new value. 
+  # we also add this value to a shared array among
+  # these instances in order to check in the future
+  # if the next instance having its nickname changed
+  # is clashing with another instance
   def setNewNickname(newnick)
     if !@@NicknameList.include? newnick
       @@NicknameList.delete newnick 
@@ -46,6 +50,11 @@ public
     end 
   end 
 
+  # When a user is edited, we set this new value. 
+  # we also add this value to a shared array among
+  # these instances in order to check in the future
+  # if the next instance having its email changed
+  # is clashing with another instance
   def setNewEmail(newemail)
     if !@@EmailList.include? @Email
       @@EmailList.delete @Email

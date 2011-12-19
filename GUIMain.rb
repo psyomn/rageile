@@ -1,13 +1,14 @@
-#author::Simon Symeonidis 
-# Main interface for the main window 
-
-load 'Configuration.rb'
-load 'GUIManageUsers.rb'
-load 'GUIManageTasks.rb'
-load 'GUIManageProjects.rb'
-
 require 'Qt4'
 
+require_relative 'Configuration.rb'
+require_relative 'GUIManageUsers.rb'
+require_relative 'GUIManageTasks.rb'
+
+
+#author::Simon Symeonidis 
+# This opens up the main dialog. From the 
+# main dialog the user is able to open any other
+# required dialog from there
 class GUIMain < Qt::Dialog
   signals 'usersClicked()'
   signals 'tasksClicked()'
@@ -16,6 +17,7 @@ class GUIMain < Qt::Dialog
   slots 'taskDialog()'
   slots 'projectDialog()'
 
+  # Main initializement of qt gui
   def initialize(parent=nil) 
     super() 
     
