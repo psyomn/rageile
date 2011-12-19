@@ -44,3 +44,7 @@ Version 2.2
 -----------
 * Task can have other tasks as dependencies.
 * Documentation re-evaluation
+
+Version 2.3
+-----------
+* Loading different objects into a proxy and deallocating lesser used one for memory optimization
