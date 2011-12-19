@@ -1,15 +1,20 @@
 #author::Simon Symeonidis 
 # Class for storage and manipulation of users  
-# TODO make email unique
 class User
-  attr_accessor :Name # Name of the user
-  attr_accessor :Surname # Surname of the user
-  attr_accessor :Description #Description of the user 
-  attr_accessor :Password #The password of the user
-  attr_reader :Email # email of the user (this should probably be the unique thing)
-  attr_reader :Nickname # A nickname should be thought of like a username
-
-  attr_reader :ID # The unique identifier for a user
+  # Name of the user
+  attr_accessor :Name
+  # Surname of the user
+  attr_accessor :Surname 
+  # Description of the user 
+  attr_accessor :Description 
+  # The password of the user
+  attr_accessor :Password 
+  # email of the user (this should probably be the unique thing)
+  attr_reader :Email 
+  # A nickname should be thought of like a username
+  attr_reader :Nickname 
+  # The unique identifier for a user
+  attr_reader :ID 
 
 public
 
@@ -27,6 +32,8 @@ public
   end 
 
   # Convert user info to string 
+  # This can be used for debug purposes or
+  # the CLI interface.
   def to_s
     "Nickname: " + @Nickname \
     + " Name: " + @Name.to_s \
