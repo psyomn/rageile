@@ -18,8 +18,10 @@ class User
 
 public
 
-  # Default constructor 
-  def initialize ( unique_nickname )
+  # Default constructor. Must be constructed with 
+  # a unique nickname given. The unique nickname is 
+  # a string. 
+  def initialize(unique_nickname)
     raise "User with that nickname already exists" if @@NicknameList.include? unique_nickname
     @Email = String.new 
     @Name = String.new 
