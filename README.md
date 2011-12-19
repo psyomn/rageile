@@ -34,6 +34,7 @@ Version 2.0
 * Server implementation complete
 * CLI interface for interaction with the server
 * Documentation re-evaluation
+* Authentication mechanism defined & implemented
 
 Version 2.1
 -----------
