@@ -16,7 +16,7 @@ public
       "actual_time INTEGER, date_created DATETIME, " +\
       "FOREIGN KEY(OWNER_ID) references User(ID), " +\
       "FOREIGN KEY(askedbyID) references User(ID) )"
-    @uPDATEsQL = 
+    @UpdateSql = 
       ""
     @DeleteSql = 
       "" 
