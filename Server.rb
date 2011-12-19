@@ -1,12 +1,11 @@
-# Generic server for the main program to listen from clients
-# and interact with. This shall be a front end to the main
-# system. 
-#Author::Simon Symeonidis 
-
 require 'socket'
 
 require_relative 'Configuration.rb'
 
+# Generic server for the main program to listen from clients
+# and interact with. This shall be a front end to the main
+# system. 
+#Author::Simon Symeonidis 
 class Server 
 
   attr_reader :Port
