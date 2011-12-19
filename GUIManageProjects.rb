@@ -8,6 +8,7 @@ class GUIManageProjects < Qt::Dialog
   # The window title of the GUI
   attr_reader :WindowTitle
 public 
+  # Standard initialization of the Qt gui
   def initialize(parent=nil)
     super()
 
