@@ -16,11 +16,11 @@ and features may change!
 
 Version 0.5
 -----------
-* Have the completed CLI interface which will work with the model
-* Mocks of GUIs for the qt-ruby interface complete
-* Persistance [Schema standard defined]
-* Documentation re-evaluation
-* CLI manual 
+* [ 90%] Have the completed CLI interface which will work with the model
+* [ 60%] Mocks of GUIs for the qt-ruby interface complete
+* [ 50%] Persistance [Schema standard defined]
+* [ 90%] Documentation re-evaluation
+* [  0%] CLI manual 
 
 Version 1.0 
 -----------
@@ -48,4 +48,5 @@ Version 2.2
 
 Version 2.3
 -----------
-* Loading different objects into a proxy and deallocating lesser used one for memory optimization
+* Loading different objects into a proxy and deallocating lesser used one for 
+memory optimization
