@@ -9,7 +9,7 @@ class User
   attr_accessor :Description 
   # The password of the user
   attr_accessor :Password 
-  # email of the user (this should probably be the unique thing)
+  # email of the user 
   attr_reader :Email 
   # A nickname should be thought of like a username
   attr_reader :Nickname 
