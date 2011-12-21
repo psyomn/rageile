@@ -24,7 +24,8 @@ public
     @StakeholderSchema = 
       "" # TODO 
 
-    @Handle = SQLite3::Database.new( Configuration.instance.Attributes["DATABASE_NAME"] ) 
+    @Handle = 
+      SQLite3::Database.new( Configuration.instance.Attributes["DATABASE_NAME"] ) 
     
     createTables 
   end

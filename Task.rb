@@ -17,9 +17,10 @@ class Task
   attr_accessor :ActualTime 
   # when this artifact was created 
   attr_accessor :DateCreated 
-  # attr_accessor :Dependencies # If this task depends on other tasks TODO check if we actually want this
   # Description of the task
   attr_accessor :Description # TODO 
+  # Type of task (new feature, improvement,...)
+  attr_reader :TaskType
 
   # stop time 
   attr_reader :Stopped 
@@ -32,6 +33,8 @@ class Task
  
   # TODO need to see if I want this level of nesting
   attr_reader :TodoList 
+
+  # attr_accessor :Dependencies # If this task depends on other tasks TODO check if we actually want this
 
 public
   # Initialize all 
@@ -97,6 +100,21 @@ public
   # Add a user to the owner list 
   def addOwner(user)
     @Owners.push(user) 
+  end 
+ 
+  # Called to set the task type as normal
+  def isNormal
+    @TaskType = 0
+  end  
+
+  # Called to set the task type as a new feature
+  def isAFeature
+    @TaskType = 1
+  end 
+
+  # Called to set the task type as an improvement
+  def isAImprovement 
+    @TaskType = 2 
   end 
 
 private

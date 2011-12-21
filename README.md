@@ -1,5 +1,5 @@
 RAGEILE 
----------------------------------------------
+===============================================================================
 This is a simple task manager. The idea is to have a client server architecture,
 and be able to connect to it from any location with different implementations of 
 the client. 
@@ -18,7 +18,7 @@ Version 0.5
 -----------
 * [ 90%] Have the completed CLI interface which will work with the model
 * [ 60%] Mocks of GUIs for the qt-ruby interface complete
-* [ 50%] Persistance [Schema standard defined]
+* [ 60%] Persistance [Schema standard defined]
 * [ 90%] Documentation re-evaluation
 * [  0%] CLI manual 
 

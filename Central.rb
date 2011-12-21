@@ -18,6 +18,9 @@ public
   include Singleton
 
   # default initializement here
+  # TODO when the time comes, the database
+  # should be loaded from here, and hence
+  # rebuild the datastructures as well.
   def initialize 
     @Projects = Array.new 
     @Users = Array.new
