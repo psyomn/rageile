@@ -1,3 +1,2 @@
-Basic test cases for the project. Should be run from this directory. 
-Maybe testing environment must be redesigned. Test::Unit should be used 
-int the future... 
+This contains examples on how certain classes could be used.
+
