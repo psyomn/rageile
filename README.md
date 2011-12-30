@@ -36,9 +36,12 @@ Version 0.5
 * [100%] Documentation re-evaluation
 * [100%] CLI manual 
 
-Version 1.0 
+Version 0.8
 -----------
 * Functionality of qt GUIs implemented [standalone] 
+
+Version 1.0 
+-----------
 * Protocol Design Complete
 * Schema complete, persistance working
 * Documentation re-evaluation
