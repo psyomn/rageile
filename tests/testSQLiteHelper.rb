@@ -10,6 +10,7 @@ sql.addAttribute("name",Literals::SQLite::TEXT)
 sql.addAttribute("surname",Literals::SQLite::TEXT) 
 sql.addAttribute("age",Literals::SQLite::INTEGER) 
 sql.addAttribute("post",Literals::SQLite::INTEGER)
+sql.addAttribute("derpy2",Literals::SQLite::TEXT)
 
 sql.addKey "ID"
 sql.setTableName "derp"

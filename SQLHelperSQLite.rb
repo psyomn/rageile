@@ -186,7 +186,9 @@ private
     str = String.new 
     @ForeignKeys.each do |key| 
       str += "FOREIGN KEY " 
+      str += "("
       str += key[0]
+      str += ")" 
       str += " REFERENCES "
       str += key[1]
       str += ","
