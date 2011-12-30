@@ -31,9 +31,12 @@ public
   end 
 
   # Add task parameter 
-  # TODO have to check for duplicates in the future
   def addTask(t) 
-    @Tasks.push(t) 
+    if !@Tasks.include? t
+      @Tasks.push(t) 
+    else
+      puts "That task already exists in this project (duplicate)"
+    end 
   end 
 
   # Get task by id

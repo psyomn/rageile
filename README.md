@@ -16,7 +16,7 @@ and features may change!
 
 Version 0.5
 -----------
-* [ 90%] Have the completed CLI interface which will work with the model
+* [ 95%] Have the completed CLI interface which will work with the model
 * [ 60%] Mocks of GUIs for the qt-ruby interface complete
 * [ 60%] Persistance [Schema standard defined]
 * [ 90%] Documentation re-evaluation
@@ -25,7 +25,7 @@ Version 0.5
 Version 1.0 
 -----------
 * Functionality of qt GUIs implemented [standalone] 
-* Protocol Design
+* Protocol Design Complete
 * Schema complete, persistance working
 * Documentation re-evaluation
 
