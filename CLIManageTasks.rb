@@ -35,8 +35,6 @@ public
   # command is mapped to a function. 
   def execute(param) 
     case param
-      when "createTask"
-        createTask
       when "createuser"
         createUser
       when "createtask"
@@ -47,7 +45,7 @@ public
         editUser
       when "editproject" 
         editProject
-      when "editTask"
+      when "edittask"
         editTask
       when "addtasktoproject"
         addTaskToProject
@@ -61,10 +59,12 @@ public
         showTasks
       when "showall"
         showAll
+      when "help"
+        showHelp
       when "end"
         @Done = true 
       else 
-        puts "Unknown Command"
+        puts "Unknown Command; write help"
     end
   end
 
@@ -155,6 +155,25 @@ private
     Central.instance.createTask(desc) 
   end 
 
+  # Print help
+  def showHelp
+    puts "List of available actions:"
+    puts "  createtask"
+    puts "  createuser"
+    puts "  createproject" 
+    puts "  edituser"
+    puts "  editproject"
+    puts "  edittask"
+    puts "  addtasktoproject"
+    puts "  addusertorpoject"
+    puts "  showusers"
+    puts "  showprojects"
+    puts "  showtasks"
+    puts "  showall"
+    puts "  help"
+    puts "  end (exit)"
+  end 
+
   # Print Tasks
   def showTasks
     puts Central.instance.Tasks.to_s
@@ -233,11 +252,23 @@ private
     proid = $stdin.gets.to_i
   end 
 
-  # Edit a particular task
+  # Edit a particular task. For the moment, only
+  # worrying about a description
   def editTask
     showTasks
     print "Edit task with ID: " 
     taskid = $stdin.gets.to_i
+    task = Central.instance.getTaskByID taskid
+    if task == nil 
+      puts "No such task"
+      return 
+    end 
+
+    puts "New description :"
+    desc = $stdin.gets
+    desc.chomp! if desc != nil
+
+    task.Description = desc
   end 
 
 end
