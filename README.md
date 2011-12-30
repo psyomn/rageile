@@ -30,11 +30,11 @@ and features may change!
 
 Version 0.5
 -----------
-* [ 95%] Have the completed CLI interface which will work with the model
+* [100%] Have the completed CLI interface which will work with the model
 * [ 60%] Mocks of GUIs for the qt-ruby interface complete
 * [100%] Persistance [Schema standard defined]
 * [100%] Documentation re-evaluation
-* [  0%] CLI manual 
+* [100%] CLI manual 
 
 Version 1.0 
 -----------
