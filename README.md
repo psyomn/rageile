@@ -15,7 +15,7 @@ Currently only the command line interface is supported.
 
   To run the application, you can run the script run.rb (You can chmod it to 
   executable). Provide the script with the 'cli' argument value (without the
-  quotes). 
+  quotes)...
 
   This should bring you to the main interface. Type in help and the script
   will present you with a list of commands on what is possible to be done. 
